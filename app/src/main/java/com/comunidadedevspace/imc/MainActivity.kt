@@ -50,9 +50,9 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra(KEY_RESULT_IMC, resultado)
                 startActivity(intent)
 
-                //Intent - Classe do proprio android
-                println(resultado)
-
+                // Cores
+                // EditText Background + Icone
+                // Gradiente +Icone + Titulo + Descrição
             }
 
         }
