@@ -6,14 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    <!-- HEADER -->
     <LinearLayout
         android:id="@+id/vg_header"
         android:layout_width="match_parent"
@@ -45,36 +38,76 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Preencha todos os campos para calcular seu Indice de Massa Corporal:"
+            android:text="Preencha todos os campos para calcular seu \u00cdndice de Massa Corporal:"
             android:layout_marginTop="8dp"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="24dp"
             android:textColor="@color/white" />
-
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_calcular"
-        android:layout_width="match_parent"
-        android:layout_margin="16dp"
+    <!-- TABELA COM BORDAS E CORES -->
+    <TableLayout
+        android:id="@+id/imc_table"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Calcular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:stretchColumns="*"
+        android:layout_margin="16dp"
+        android:background="@drawable/table_border"
+        app:layout_constraintTop_toBottomOf="@id/vg_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Cabeçalho -->
+        <TableRow android:background="#DDDDDD">
+            <TextView android:text="IMC" android:textStyle="bold" android:padding="8dp" />
+            <TextView android:text="Classifica\u00e7\u00e3o" android:textStyle="bold" android:padding="8dp" />
+            <TextView android:text="Grau" android:textStyle="bold" android:padding="8dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="&lt; 18,5" android:padding="8dp" />
+            <TextView android:text="Magreza" android:padding="8dp" />
+            <TextView android:text="0" android:padding="8dp" />
+        </TableRow>
+
+        <TableRow android:background="#F3F3F3">
+            <TextView android:text="18,5 - 24,9" android:padding="8dp" />
+            <TextView android:text="Normal" android:padding="8dp" />
+            <TextView android:text="0" android:padding="8dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="25,0 - 29,9" android:padding="8dp" />
+            <TextView android:text="Sobrepeso" android:padding="8dp" />
+            <TextView android:text="I" android:padding="8dp" />
+        </TableRow>
+
+        <TableRow android:background="#F3F3F3">
+            <TextView android:text="30,0 - 39,9" android:padding="8dp" />
+            <TextView android:text="Obesidade" android:padding="8dp" />
+            <TextView android:text="II" android:padding="8dp" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="&gt; 40,0" android:padding="8dp" />
+            <TextView android:text="Obesidade Grave" android:padding="8dp" />
+            <TextView android:text="III" android:padding="8dp" />
+        </TableRow>
+    </TableLayout>
+
+    <!-- CAMPOS DE ENTRADA -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:hintEnabled="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imc_table"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vg_header">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_peso"
@@ -92,19 +125,30 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:hintEnabled="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_altura"
-            android:drawableEnd="@drawable/ic_height"
-            android:maxLength="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_bg"
+            android:drawableEnd="@drawable/ic_height"
             android:hint="Digite sua Altura Ex.: 1.70"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            android:maxLength="4"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- BOTÃO -->
+    <Button
+        android:id="@+id/btn_calcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
