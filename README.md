@@ -5,7 +5,7 @@ Enter your height and weight to instantly see your BMI result and classification
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src = "https://github.com/user-attachments/assets/83cc3f80-fbe6-43ec-b78a-d0b305e6e6ac" width=260 /> <img src = "https://github.com/user-attachments/assets/8f8c87c0-8b02-449b-b894-7e447374c0c6" width=260 />
+<img src = "https://github.com/user-attachments/assets/a58a81ec-1d1e-466e-91ec-b4385835606f" width=260 /> <img src = "https://github.com/user-attachments/assets/8f8c87c0-8b02-449b-b894-7e447374c0c6" width=260 />
 
 ## Tecnologias
 - Activity
