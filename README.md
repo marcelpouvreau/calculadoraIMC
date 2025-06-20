@@ -1,5 +1,6 @@
 # Calculadora IMC - BMI Calculator
 An easy-to-use Body Mass Index (BMI) calculator project built with Kotlin.
+
 Enter your height and weight to instantly see your BMI result and classification.
 
 ## :camera_flash: Screenshots
